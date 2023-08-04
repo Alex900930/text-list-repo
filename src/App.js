@@ -5,11 +5,14 @@ function App() {
   return (
     <div className="App">
       <div className="input-container">
+        <label>
+          <img src={plusSquareIcon} alt="Plus Square Icon" className="icon" />
+        </label>
+        <div></div>
         <input
-          type="text"
-          placeholder="        Type to add new task"
+          type="search"
+          placeholder="Type to add new task"
         />
-        <img src={plusSquareIcon} alt="Plus Square Icon" className="icon" />
       </div>
     </div>
   );
