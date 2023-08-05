@@ -94,17 +94,16 @@ input:focus {
     vertical-align: middle;
 }
 
-#button1 {
+.button1 {
     background-color: #dad7d74f;
     color: #888;
-    cursor: not-allowed;
     border: none;
     border-radius: 5px;
     font-family: Satoshi variable, sans-serif;
     font-size: 13px;
     font-weight: 600;
     line-height: 211%;
-    margin: 5px 5px 10px 5px;
+    margin: 5px 21px 10px 5px;
     display: inline-flex;
     justify-items: center;
     align-items: flex-start;
@@ -119,9 +118,33 @@ input:focus {
     vertical-align: middle;
 }
 
+.button1-enabled {
+    background-color: #dad7d74f;
+    border-radius: 5px;
+    font-family: Satoshi variable, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 211%;
+    margin: 5px 21px 10px 5px;
+    display: inline-flex;
+    justify-items: center;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    cursor: pointer;
+    color: black;
+    padding: 5px 20px;
+    position: relative;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
 .class-1-buttons {
     background-color: #fff;
-    border: 1px solid #dedede;
+    border: 1px solid #938c8c;
     border-radius: 5px;
     font-family: Satoshi variable, sans-serif;
     font-size: 13px;
@@ -137,7 +160,7 @@ input:focus {
     flex-direction: row;
     text-align: center;
     cursor: pointer;
-    color: #222;
+    color: #938c8c;
     padding: 5px 20px;
     position: relative;
     max-width: 100%;
@@ -211,7 +234,7 @@ input:focus {
     line-height: 140%;
     border: 1px solid #dedede;
     margin-top: 5px;
-    margin-left: 542px;
+    margin-left: 520px;
     height: 72%;
     width: 106px;
     margin-bottom: 10px;
@@ -222,6 +245,13 @@ input:focus {
 }
 
 .imagen-logo {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    margin-left: 63px;
+}
+
+.img-null{
     width: 33px;
     height: 33px;
     border-radius: 50%;
