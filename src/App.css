@@ -7,15 +7,43 @@ body {
     color: #FFFFFF;
 }
 
-input {
-    width: 1328px;
+#input-styles {
+    width: auto;
+    max-width: 1300px;
     height: 40px;
-    top: 56px;
-    left: 56px;
+    top: 6px;
+    left: 5px;
     border: 1px transparent;
     font-size: 1.1em;
-    padding: 0px 0 0 28px;
+    padding: 0px 0 0 20px;
     inline-size: max-content;
+    position: absolute;
+    background-color: transparent;
+    outline: none;
+    caret-color: #555555;
+    color: transparent;
+    overflow-y: auto;
+    text-indent: 20px;
+    vertical-align: bottom;
+}
+
+.highlighted-text {
+    border: transparent;
+    width: 1400px;
+    height: 50px;
+    background-color: transparent;
+    line-height: 1.4;
+    position: absolute;
+    z-index: 1;
+    top: 13px;
+    left: 40px;
+    right: 0;
+    bottom: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: black;
+    font-size: large;
+    font-weight: bold;
 }
 
 input:hover {
@@ -167,7 +195,7 @@ input:focus {
     vertical-align: middle;
 }
 
-.handleClick{
+.handleClick {
     width: 1250px;
     margin-left: -7px;
 }
@@ -223,7 +251,7 @@ input:focus {
     display: none;
 }
 
-.button-Cancel{
+.button-Cancel {
     text-align: center;
     background-color: #dedede;
     border-radius: 5px;
@@ -248,13 +276,39 @@ input:focus {
     width: 33px;
     height: 33px;
     border-radius: 50%;
-    margin-left: 63px;
+    margin-left: 16px;
 }
 
-.img-null{
+.imagen-logo-opacity {
+    opacity: 0.5;
+    margin-left: 25px;
+}
+
+.img-null {
     width: 33px;
     height: 33px;
     border-radius: 50%;
-    opacity: 0.5;
     margin-left: 63px;
+    display: none;
 }
+
+.green-tag {
+    color: lightgreen;
+}
+
+.purple-tag {
+    color: violet;
+}
+
+.orange-email {
+    color: orange;
+}
+
+.blue-url {
+    color: lightblue;
+}
+
+.normal {
+    color: currentColor;
+}
+
