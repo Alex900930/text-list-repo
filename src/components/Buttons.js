@@ -9,9 +9,19 @@ import sun1 from "../images/sun1.svg";
 import pieChart from "../images/pie-chart.svg";
 import pieChart1 from "../images/pie-chart1.svg";
 import '../styles/Buttons.css';
-//import '../App.css';
 
-export default function Buttons({handleOkClick, inputValue, buttonOk}) {
+export default function Buttons({setBotonesHabilitados, setInputValue, setIsAdding, inputValue, buttonOk, setButtonOk}) {
+
+  const handleOkClick = (e) => {
+    if (inputValue.trim() === '') {
+      setBotonesHabilitados(false);
+      setInputValue('');
+      setIsAdding(false);
+    } else {
+      setIsAdding(true);
+      setBotonesHabilitados(false);
+    }
+  };
 
   return (
     <div className="footer-container">
@@ -38,7 +48,7 @@ export default function Buttons({handleOkClick, inputValue, buttonOk}) {
       <button className="button-Cancel" onClick={handleOkClick}>
         Cancel
       </button>
-      <button className="button-Ok" onClick={handleOkClick}>
+      <button className="button-Ok" data-testid="add-button" onClick={handleOkClick}>
         {buttonOk}
       </button>
     </div>

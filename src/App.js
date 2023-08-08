@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import {getWordStyleDiv, isValidUrl, isValidEmail, getWordStyle} from './helpers';
 import Buttons from "./components/Buttons";
 import close from "./images/x.svg";
 import save from "./images/save.svg";
@@ -9,44 +10,6 @@ import linkIcon from './images/link.svg';
 import plusSquareIcon from './images/plus-square.svg';
 import imgLogin from './images/curriculum.jpeg';
 import imgLogin1 from './images/curriculum1.jpeg';
-
-const isValidEmail = (text) => {
-  const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/;
-  return emailRegex.test(text);
-};
-
-const isValidUrl = (text) => {
-  const urlRegex = /^(http[s]?:\/\/)?[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?$/;
-  return urlRegex.test(text);
-};
-
-const getWordStyleDiv = (word) => {
-  if (word.startsWith('@')) {
-    return { className: 'green-tag-div', text: word };
-  } else if (word.startsWith('#')) {
-    return { className: 'purple-tag-div', text: word };
-  } else if (isValidEmail(word)) {
-    return { className: 'orange-email-div', text: 'Email 1' };
-  } else if (isValidUrl(word)) {
-    return { className: 'blue-url-div', text: 'Link 1' };
-  } else {
-    return { className: 'normal-div', text: word };
-  }
-};
-
-const getWordStyle = (word) => {
-  if (word.startsWith('@')) {
-    return 'green-tag';
-  } else if (word.startsWith('#')) {
-    return 'purple-tag';
-  } else if (isValidEmail(word)) {
-    return 'orange-email';
-  } else if (isValidUrl(word)) {
-    return 'blue-url';
-  } else {
-    return 'normal';
-  }
-};
 
 function App() {
   const [botonesHabilitados, setBotonesHabilitados] = useState(false);
@@ -58,17 +21,6 @@ function App() {
     setBotonesHabilitados(!botonesHabilitados);
     setIsAdding(false);
     setInputValue('');
-  };
-
-  const handleOkClick = (e) => {
-    if (inputValue.trim() === '') {
-      setBotonesHabilitados(false);
-      setInputValue('');
-      setIsAdding(false);
-    } else {
-      setIsAdding(true);
-      setBotonesHabilitados(false);
-    }
   };
 
   const handleInput = (e) => {
@@ -105,6 +57,8 @@ function App() {
     function handleResize() {
       if (window.innerWidth < 1230) {
         handleButtonOk();
+      } else if(inputValue !== '') {
+        setButtonOk("Add");
       } else {
         setButtonOk("Ok");
       }
@@ -132,7 +86,7 @@ function App() {
         <label>
           <img src={plusSquareIcon} alt="Plus Square Icon" className="icon" />
         </label>
-        <div onClick={handleLinkClick}
+        <div data-testid="link-clickable" onClick={handleLinkClick}
              className={`${botonesHabilitados ? 'handleClick' : 'handleClick-without-style'}`}>
           <input
             type="text"
@@ -141,6 +95,7 @@ function App() {
             onChange={(e) => handleInput(e)}
             id="input-styles"
             style={{ width: 1300 }}
+            data-testid="input-styles"
           />
           {isAdding ? <input placeholder="Type to add new task" id="input-styles" /> : <div className="highlighted-text">
             {inputValue.split(' ').map((word, index) => (
@@ -178,8 +133,8 @@ function App() {
             );
           })}
         </div>
-      </div>) : botonesHabilitados && <Buttons handleOkClick={handleOkClick}
-                                               inputValue={inputValue} buttonOk={buttonOk} setButtonOk={setButtonOk} />}
+      </div>) : botonesHabilitados && <Buttons setBotonesHabilitados={setBotonesHabilitados} setInputValue={setInputValue}
+                                               setIsAdding={setIsAdding} inputValue={inputValue} buttonOk={buttonOk} setButtonOk={setButtonOk}/>}
     </div>
   );
 }
