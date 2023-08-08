@@ -8,8 +8,10 @@ import sun from "../images/sun.svg";
 import sun1 from "../images/sun1.svg";
 import pieChart from "../images/pie-chart.svg";
 import pieChart1 from "../images/pie-chart1.svg";
+import '../styles/Buttons.css';
+//import '../App.css';
 
-export default function Buttons({handleOkClick, inputValue}) {
+export default function Buttons({handleOkClick, inputValue, buttonOk}) {
 
   return (
     <div className="footer-container">
@@ -37,7 +39,7 @@ export default function Buttons({handleOkClick, inputValue}) {
         Cancel
       </button>
       <button className="button-Ok" onClick={handleOkClick}>
-        Ok
+        {buttonOk}
       </button>
     </div>
   )
