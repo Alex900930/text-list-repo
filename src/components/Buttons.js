@@ -20,6 +20,20 @@ export default function Buttons({setBotonesHabilitados, setInputValue, setIsAddi
     } else {
       setIsAdding(true);
       setBotonesHabilitados(false);
+      fetch('http://localhost:3001/agregar-tarea', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ tarea: inputValue }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data); // Imprimir la respuesta del servidor en la consola
+        })
+        .catch((error) => {
+          console.error('Error al agregar tarea:', error);
+        });
     }
   };
 
