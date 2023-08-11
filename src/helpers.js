@@ -1,14 +1,14 @@
 export const getWordStyleDiv = (word) => {
   if (word.startsWith('@')) {
-    return { className: 'green-tag-div', text: word };
+    return {className: 'green-tag-div', text: word};
   } else if (word.startsWith('#')) {
-    return { className: 'purple-tag-div', text: word };
+    return {className: 'purple-tag-div', text: word};
   } else if (isValidEmail(word)) {
-    return { className: 'orange-email-div', text: 'Email 1' };
+    return {className: 'orange-email-div', text: 'Email 1'};
   } else if (isValidUrl(word)) {
-    return { className: 'blue-url-div', text: 'Link 1' };
+    return {className: 'blue-url-div', text: 'Link 1'};
   } else {
-    return { className: 'normal-div', text: word };
+    return {className: 'normal-div', text: word};
   }
 };
 

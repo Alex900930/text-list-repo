@@ -10,7 +10,16 @@ import pieChart from "../images/pie-chart.svg";
 import pieChart1 from "../images/pie-chart1.svg";
 import '../styles/Buttons.css';
 
-export default function Buttons({setBotonesHabilitados, setInputValue, setIsAdding, inputValue, buttonOk, setButtonOk}) {
+export default function Buttons({
+                                  setBotonesHabilitados,
+                                  setInputValue,
+                                  setIsAdding,
+                                  inputValue,
+                                  buttonOk,
+                                  tasks,
+                                  setTasks,
+                                  botonesHabilitados
+                                }) {
 
   const handleOkClick = (e) => {
     if (inputValue.trim() === '') {
@@ -19,8 +28,9 @@ export default function Buttons({setBotonesHabilitados, setInputValue, setIsAddi
       setIsAdding(false);
     } else {
       setIsAdding(true);
-      setBotonesHabilitados(false);
-      fetch('http://localhost:3001/agregar-tarea', {
+      setTasks([...tasks, inputValue]);
+      setInputValue('');
+      /*fetch('http://localhost:3001/agregar-tarea', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,12 +43,12 @@ export default function Buttons({setBotonesHabilitados, setInputValue, setIsAddi
         })
         .catch((error) => {
           console.error('Error al agregar tarea:', error);
-        });
+        });*/
     }
   };
 
   return (
-    <div className="footer-container">
+    <div className={`${botonesHabilitados ? "footer-container" : 'footer-container-withoutBorder'}`}>
       <button className={`button1 ${inputValue ? 'button1-enabled' : 'custom-button-disabled'}`}>
         <img src={`${inputValue ? maximize1 : maximize2}`} alt="maximize" className="imageButton"/>
         <span className="button-text">Open</span>

@@ -1,4 +1,121 @@
 .footer-container {
+    line-height: 100%;
+    width: 100%;
+}
+
+.footer-container-withoutBorder {
+    display: none;
+}
+
+.button1 {
+    background-color: #dad7d74f;
+    color: #888;
+    border: none;
+    border-radius: 5px;
+    font-family: Satoshi variable, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 211%;
+    margin: 5px 21px 10px 5px;
+    display: inline-flex;
+    justify-items: center;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    padding: 5px 20px;
+    position: relative;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.button1-enabled {
+    background-color: #dad7d74f;
+    border-radius: 5px;
+    font-family: Satoshi variable, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 211%;
+    margin: 5px 21px 10px 5px;
+    display: inline-flex;
+    justify-items: center;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    cursor: pointer;
+    color: black;
+    padding: 5px 20px;
+    position: relative;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.button-Cancel {
+    text-align: center;
+    background-color: #dedede;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-family: Satoshi variable, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 211%;
+    border: 1px solid #dedede;
+    margin-top: 5px;
+    margin-left: 520px;
+    height: 72%;
+    width: 106px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+}
+
+.button-Cancel:hover {
+    cursor: pointer;
+}
+
+.button-Ok {
+    color: #fff;
+    text-align: center;
+    background-color: #4262ff;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-family: Satoshi variable, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 211%;
+    border: 1px solid #dedede;
+    margin: 5px 3px 10px 3px;
+    vertical-align: middle;
+    height: 72%;
+    width: 71px;
+}
+
+.icon-button {
+    color: #fff;
+    text-align: center;
+    background-color: #4262ff;
+    border-radius: 5px;
+    vertical-align: middle;
+    height: 72%;
+}
+
+.button-Ok:hover {
+    cursor: pointer;
+}
+
+.icon-button:hover {
+    cursor: pointer;
+}
+
+/*
+
+
+
+.footer-container {
     height: 58px;
     line-height: 100%;
     width: 100%;
@@ -93,11 +210,10 @@
 
 .button-Ok:hover {
     cursor: pointer;
-}
+}*/
 
 @media (max-width: 1230px) {
-    .button1
-    {
+    .button1 {
         font-size: 0;
     }
 
@@ -111,12 +227,26 @@
     }
 
     .button-Ok {
-        font-size: 0;
+        /*font-size: 0;
         margin-left: 885px;
-        width: 60px;
+        width: 60px;*/
+        margin-left: auto;
+        width: auto;
     }
 
     .imageButton {
         padding-right: 5px;
+    }
+
+    .custom-button-disabled {
+        font-size: 0;
+        border: transparent;
+    }
+
+    .icon-button {
+        margin-left: auto;
+        /*width: auto;*/
+        max-width: 100%;
+        height: auto;
     }
 }
