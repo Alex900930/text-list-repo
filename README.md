@@ -1,6 +1,13 @@
 # Getting Started with Create React App
 
+This project was developed following the styles requested in Figma.
+Developed with React.js, Css, JSX, JS technologies.
+It also has unit tests with Jest, covering more than 85% of its components.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+![image](https://github.com/Alex900930/text-list-repo/assets/109861348/20c35809-37a3-43c1-86f9-c84a574d3deb)
+
 
 ## Available Scripts
 
